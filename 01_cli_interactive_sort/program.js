@@ -10,7 +10,7 @@ const regexNumbers = /[0-9]/g; //Filter Numbers
 function Sort_Words() {
   var sorted = [];
   for(const index in input_data){
-    if(!input_data[index].match(regexNumbers) && input_data[index] != ''){
+    if(input_data[index].search(regexNumbers) == -1 && input_data[index] != ''){
       sorted.push(input_data[index]);
     }
   }
@@ -21,7 +21,7 @@ function Sort_Words() {
 function Sort_Numbers_From_Lesser() {
   var sorted = [];
   for(const index in input_data){
-    if(!input_data[index].match(regexLetters) && input_data[index] != ''){
+    if(input_data[index].search(regexLetters) == -1 && input_data[index] != ''){
       sorted.push(input_data[index]);
     }
   }
@@ -32,7 +32,7 @@ function Sort_Numbers_From_Lesser() {
 function Sort_Numbers_From_Bigger() {
   var sorted = [];
   for(const index in input_data){
-    if(!input_data[index].match(regexLetters) && input_data[index] != ''){
+    if(input_data[index].search(regexLetters) == -1 && input_data[index] != ''){
       sorted.push(input_data[index]);
     }
   }
@@ -43,7 +43,7 @@ function Sort_Numbers_From_Bigger() {
 function Sort_Words_Length() {
   var sorted = [];
   for(const index in input_data){
-    if(!input_data[index].match(regexNumbers)){
+    if(input_data[index].search(regexNumbers) == -1){
       sorted.push(input_data[index]);
     }
   }
@@ -54,7 +54,7 @@ function Sort_Words_Length() {
 function Show_Unique_Words() {
   const sorted = new Set(input_data);
   for(const index of sorted){
-    if(index.match(regexNumbers)){
+    if(index.search(regexNumbers) != -1){
       sorted.delete(index);
     }
   }
@@ -78,7 +78,7 @@ async function Start_input() {
 
 //Show Menu, Check the answer, Start data processing
 async function Menu() {
-  const answer = await rl.question("\n---------MENU---------\n1. Sort words alphabetically\n2. Show numbers from lesser to greater\n3. Show numbers from bigger to smaller\n4. Display words in ascending order by number of letters in the word\n5. Show only unique words\n6. Display only unique values from the set of words and numbers entered by the user\nYour choice:")
+  const answer = await rl.question("\n---------MENU---------\n1. Sort words alphabetically\n2. Show numbers from lesser to greater\n3. Show numbers from bigger to smaller\n4. Display words in ascending order by number of letters in the word\n5. Show only unique words\n6. Display only unique values\n(To leave program Enter: exit)\nYour choice: ")
     switch(answer){
       case "1": //
         console.log(Sort_Words());
