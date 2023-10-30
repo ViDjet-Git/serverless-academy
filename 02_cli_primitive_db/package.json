@@ -1,0 +1,23 @@
+{
+  "name": "02_cli_primitive_db",
+  "version": "1.0.0",
+  "description": "CLI: PRIMITIVE DB",
+  "main": "program.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ViDjet-Git/serverless-academy.git"
+  },
+  "author": "Andrii O.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ViDjet-Git/serverless-academy/issues"
+  },
+  "homepage": "https://github.com/ViDjet-Git/serverless-academy#readme",
+  "dependencies": {
+    "inquirer": "^9.2.11"
+  },
+  "type": "module"
+}
