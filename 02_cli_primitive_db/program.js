@@ -151,7 +151,7 @@ function Start() {
 //Leave the program with message
 function End_Prog() {
   console.log("\nGood Bye\n");
-  process.exit(1);
+  process.exit(0);
 }
 
 Start();
