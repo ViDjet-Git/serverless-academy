@@ -4,7 +4,7 @@ const TelegramBot = require('node-telegram-bot-api');
 
 process.env.NTBA_FIX_350 = true;
 
-const token = '6560684640:AAFu2sFolWPTBRXLUuKz7GUgsK_AOeTd7to';
+const token = '';
 const bot = new TelegramBot(token, {polling: true});
 const chatId = fs.readFileSync('chat.txt');
 
